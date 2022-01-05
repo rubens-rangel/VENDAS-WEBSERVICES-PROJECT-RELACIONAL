@@ -1,13 +1,15 @@
 package com.example.demo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
     public static final long serialVersionUID =1L;
 
@@ -18,6 +20,14 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+
+    @JsonIgnore
+    @OneToMany(mappedBy ="client")
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 
     public User() {
     }
