@@ -1,6 +1,6 @@
 # WEB-REST-PROJECT
 
-Spring boot project. Through the java course at Udemy - Teacher Nelio Alves
+Spring-boot project. Through the java course at Udemy - Teacher Nelio Alves
 
 
 Deployed at heroku:
